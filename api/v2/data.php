@@ -19,10 +19,10 @@
     if (!curl_exec($c) | (int)curl_getinfo($c)['http_code'] === 408) {
         $return = array(
             "1" => "timeout",
-            "latency" => (curl_getinfo($c)['namelookup_time']+curl_getinfo($c)['connect_time']+curl_getinfo($c)['appconnect']+curl_getinfo($c)['pretransfer_time']+curl_getinfo($c)['redirect_time']+curl_getinfo($c)['starttransfer_time'])*1000,
+            "2" => (curl_getinfo($c)['namelookup_time']+curl_getinfo($c)['connect_time']+curl_getinfo($c)['appconnect']+curl_getinfo($c)['pretransfer_time']+curl_getinfo($c)['redirect_time']+curl_getinfo($c)['starttransfer_time'])*1000,
             "3" => curl_getinfo($c)['http_code'],
-            "speed" => curl_getinfo($c)['speed_download'] * 8 / 1024 / 1024,
-            "size" => curl_getinfo($c)['size_download'],
+            "4" => curl_getinfo($c)['speed_download'] * 8 / 1024 / 1024,
+            "5" => curl_getinfo($c)['size_download'],
             "6" => curl_getinfo($c)['namelookup_time']*1000,
             "7" => curl_getinfo($c)['connect_time']*1000,
             "8" => explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1],
@@ -35,10 +35,10 @@
         if ($code < 399) {
             $return = array(
                 "1" => "up",
-                "latency" => (curl_getinfo($c)['namelookup_time']+curl_getinfo($c)['connect_time']+curl_getinfo($c)['appconnect']+curl_getinfo($c)['pretransfer_time']+curl_getinfo($c)['redirect_time']+curl_getinfo($c)['starttransfer_time'])*1000,
+                "2" => (curl_getinfo($c)['namelookup_time']+curl_getinfo($c)['connect_time']+curl_getinfo($c)['appconnect']+curl_getinfo($c)['pretransfer_time']+curl_getinfo($c)['redirect_time']+curl_getinfo($c)['starttransfer_time'])*1000,
                 "3" => curl_getinfo($c)['http_code'],
-                "speed" => curl_getinfo($c)['speed_download'] * 8 / 1024 / 1024,
-                "size" => curl_getinfo($c)['size_download'],
+                "4" => curl_getinfo($c)['speed_download'] * 8 / 1024 / 1024,
+                "5" => curl_getinfo($c)['size_download'],
                 "6" => curl_getinfo($c)['namelookup_time']*1000,
                 "7" => curl_getinfo($c)['connect_time']*1000,
                 "8" => explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1],
@@ -49,10 +49,10 @@
         } else {
             $return = array(
                 "1" => "down",
-                "latency" => (curl_getinfo($c)['namelookup_time']+curl_getinfo($c)['connect_time']+curl_getinfo($c)['appconnect']+curl_getinfo($c)['pretransfer_time']+curl_getinfo($c)['redirect_time']+curl_getinfo($c)['starttransfer_time'])*1000,
+                "2" => (curl_getinfo($c)['namelookup_time']+curl_getinfo($c)['connect_time']+curl_getinfo($c)['appconnect']+curl_getinfo($c)['pretransfer_time']+curl_getinfo($c)['redirect_time']+curl_getinfo($c)['starttransfer_time'])*1000,
                 "3" => curl_getinfo($c)['http_code'],
-                "speed" => curl_getinfo($c)['speed_download'] * 8 / 1024 / 1024,
-                "size" => curl_getinfo($c)['size_download'],
+                "4" => curl_getinfo($c)['speed_download'] * 8 / 1024 / 1024,
+                "5" => curl_getinfo($c)['size_download'],
                 "6" => curl_getinfo($c)['namelookup_time']*1000,
                 "7" => curl_getinfo($c)['connect_time']*1000,
                 "8" => explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1],
