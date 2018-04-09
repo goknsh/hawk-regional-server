@@ -25,7 +25,7 @@
             "5" => curl_getinfo($c)['size_download'],
             "6" => curl_getinfo($c)['namelookup_time']*1000,
             "7" => curl_getinfo($c)['connect_time']*1000,
-            "8" => explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1],
+            "8" => addslashes(explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1]),
             "9" => curl_getinfo($c)['certinfo'][0]['Expire date']
         );
         curl_close($c);
@@ -41,7 +41,7 @@
                 "5" => curl_getinfo($c)['size_download'],
                 "6" => curl_getinfo($c)['namelookup_time']*1000,
                 "7" => curl_getinfo($c)['connect_time']*1000,
-                "8" => explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1],
+                "8" => addslashes(explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1]),
                 "9" => curl_getinfo($c)['certinfo'][0]['Expire date'],
             );
             curl_close($c);
@@ -55,7 +55,7 @@
                 "5" => curl_getinfo($c)['size_download'],
                 "6" => curl_getinfo($c)['namelookup_time']*1000,
                 "7" => curl_getinfo($c)['connect_time']*1000,
-                "8" => explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1],
+                "8" => addslashes(explode("CN = ", curl_getinfo($c)['certinfo'][1]['Subject'])[1]),
                 "9" => curl_getinfo($c)['certinfo'][0]['Expire date'],
             );
             curl_close($c);
