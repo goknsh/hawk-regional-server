@@ -7,14 +7,14 @@
     curl_setopt($c, CURLOPT_HEADER, TRUE);
     curl_setopt($c, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($c, CURLOPT_FRESH_CONNECT, 1);
+    curl_setopt($c, CURLOPT_FRESH_CONNECT, TRUE);
     curl_setopt($c, CURLOPT_CERTINFO, TRUE);
     curl_setopt($c, CURLOPT_TIMEOUT, 25);
     curl_setopt($c, CURLOPT_COOKIESESSION, TRUE);
     curl_setopt($c, CURLOPT_FOLLOWLOCATION, TRUE);
     curl_setopt($c, CURLOPT_MAXREDIRS, 15);
     curl_setopt($c, CURLOPT_FORBID_REUSE, TRUE);
-    curl_setopt($c, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; Ping Bot/1.0; +https://useping.ga/bot)');
+    curl_setopt($c, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; Ping Bot/1.0; Report Abuse at: +https://useping.ga/bot)');
     
     if (!curl_exec($c) | (int)curl_getinfo($c)['http_code'] === 408) {
         $return = array(
