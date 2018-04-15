@@ -17,7 +17,7 @@
     curl_setopt($c, CURLOPT_FORBID_REUSE, 1);
     curl_setopt($c, CURLOPT_DNS_CACHE_TIMEOUT, 0);
     curl_setopt($c, CURLOPT_SSL_SESSIONID_CACHE, 0);
-    curl_setopt($c, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; Ping Bot/1.0; Report Abuse at: +https://useping.ga/bot)');
+    curl_setopt($c, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; Hawk Bot/1.0; Report Abuse at: +https://usehawk.ga/bot)');
     
     if (!curl_exec($c) | (int)curl_getinfo($c)['http_code'] === 408) {
         $return = array(
